@@ -8,11 +8,11 @@ from lizard_ui.urls import debugmode_urlpatterns
 
 admin.autodiscover()
 
+
+API_URL_NAME = 'lizard_geo_api_root'
+
 urlpatterns = patterns(
     '',
-    (r'^admin/', include(admin.site.urls)),
-    # url(r'^something/',
-    #     direct.import.views.some_method,
-    #     name="name_it"),
+    (r'^api/', include('lizard_geo.api.urls')),
     )
 urlpatterns += debugmode_urlpatterns()
