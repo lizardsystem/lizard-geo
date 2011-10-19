@@ -2,7 +2,7 @@ Changelog of lizard-geo
 ===================================================
 
 
-0.1 (unreleased)
+0.1 (2011-10-19)
 ----------------
 
 - Moved models from lizard-area.
