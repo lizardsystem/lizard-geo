@@ -2,8 +2,10 @@
 
 from django.test import TestCase
 
+from lizard_geo.api.resources import GeoObjectGroupResource
 
-class ExampleTest(TestCase):
 
-    def test_something(self):
-        self.assertEquals(1, 1)
+class ApiTest(TestCase):
+
+    def test_smoke_resource(self):
+        GeoObjectGroupResource(None)
