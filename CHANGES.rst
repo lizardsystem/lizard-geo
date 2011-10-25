@@ -5,7 +5,7 @@ Changelog of lizard-geo
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Changed max_length of GeoObject.ident from 16 to 80.
 
 
 0.1 (2011-10-19)

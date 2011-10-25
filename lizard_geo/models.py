@@ -43,7 +43,7 @@ class GeoObject(models.Model):
 
     Parents are used for deel aan-/afvoergebieden.
     """
-    ident = models.CharField(max_length=16, unique=True)
+    ident = models.CharField(max_length=80, unique=True)
     geometry = models.GeometryField(srid=4326)
     geo_object_group = models.ForeignKey(GeoObjectGroup)
     objects = models.GeoManager()
