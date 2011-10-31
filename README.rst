@@ -2,8 +2,14 @@ lizard-geo
 ==========================================
 
 Introduction
+------------
 
-Store geo objects and manage imports.
+Store geo objects and manage imports. The app provides the basics for
+storing geographical entities. GeoObjects store the entities
+themselves and GeoObjectGroup groups the GeoObjects.
+
+See also lizard-area and lizard-fewsnorm as examples.
+
 
 Development installation
 ------------------------
@@ -66,8 +72,13 @@ You can create the tables for these packages, or using the South terminology,
 
   $ bin/django migrate
 
+
 Usage
 -----
 
-Use lizard-area and lizard-fewsnorm as examples.
+Most of the time you want to extend GeoObject because extra fields are
+needed. When importing from a datasource, for instance a shape file,
+you can make a GeoObjectGroup for each import. The purpose for a
+GeoObjectGroup is that you can remove GeoObjects later by removing the
+GeoObjectGroups.
 

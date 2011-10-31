@@ -50,7 +50,9 @@ class GeoObject(models.Model):
 
     def extent(self, srid=900913):
         """ return a tuple with extent
-        note: tuple is needed in templates (including braces) in template homepage.js
+
+        note: tuple is needed in templates (including braces) in
+        template homepage.js
         """
 
         return self.geometry.transform(srid, True).extent

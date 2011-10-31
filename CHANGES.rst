@@ -5,6 +5,10 @@ Changelog of lizard-geo
 0.2 (unreleased)
 ----------------
 
+- Pylint.
+
+- Updated readme.
+
 - Changed max_length of GeoObject.ident from 16 to 80.
 
 

@@ -8,9 +8,9 @@ class RootView(View):
     Startpoint.
     """
     def get(self, request):
-         return {
+        return {
             "geo_object_groups": [
-                 {'name': gog.name,
-                  'url': gog.get_absolute_url()}
-                 for gog in GeoObjectGroup.objects.all()],
+                {'name': gog.name,
+                 'url': gog.get_absolute_url()}
+                for gog in GeoObjectGroup.objects.all()],
             }
