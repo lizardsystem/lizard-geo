@@ -5,22 +5,15 @@ from django.core.urlresolvers import reverse
 
 
 class GeoObjectGroup(models.Model):
-    """
-    Geo objects are grouped.
+    """Implements a group of GeoObject(s).
 
-    These are starting points to navigate through all geo objects.
-
-    Examples of groups:
-    - Alle aan-/afvoergebieden van een waterschap
-    - Alle deel aan-/afvoergebieden van 1 deelgebied
-    - Alle krw waterlichamen
+    A GeoObjectGroup can be a starting point to navigate through a specific
+    subset of GeoObject(s).
 
     TODO: Automatically fill in slug
     """
     name = models.CharField(max_length=128)
     slug = models.SlugField(unique=True)
-    # legend = models.ForeignKey(LegendClass, null=True, blank=True)
-    # "source"
 
     created_by = models.ForeignKey(User)
     last_modified = models.DateTimeField(auto_now=True)
@@ -35,13 +28,15 @@ class GeoObjectGroup(models.Model):
 
 
 class GeoObject(models.Model):
-    """
-    Geo objects storage.
+    """Represents a real-world geometrical entity or is linked to one.
 
-    Ident MUST be unique. When importing shapefiles references are
-    done using ident.
+    A GeoObject 'as is' only contains basic information. In general, you will
+    have to extend this information in a subclass.
 
-    Parents are used for deel aan-/afvoergebieden.
+    Note that field 'ident' MUST be unique. This field will contain an ID for
+    the GeoObject in the terminology of the domain field. Client code can use
+    this field to query and/or filter.
+
     """
     ident = models.CharField(max_length=80, unique=True)
     geometry = models.GeometryField(srid=4326)
