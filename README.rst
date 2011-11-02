@@ -82,3 +82,6 @@ you can make a GeoObjectGroup for each import. The purpose for a
 GeoObjectGroup is that you can remove GeoObjects later by removing the
 GeoObjectGroups.
 
+Note that you must use PostGIS 1.5 or newer in order to make spatial
+queries on the GeometryField. A spatial queryset is for example:
+GeoObject.objects.filter(geometry__distance_lte=(pnt, D(m=10))
