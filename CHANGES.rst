@@ -2,7 +2,7 @@ Changelog of lizard-geo
 ===================================================
 
 
-0.3 (unreleased)
+0.3 (2011-11-29)
 ----------------
 
 - Removed unique from GeoObject.ident. The administrator himself
