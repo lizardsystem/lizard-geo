@@ -5,7 +5,8 @@ Changelog of lizard-geo
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Removed unique from GeoObject.ident. The administrator himself
+  should manage the uniqueness of idents.
 
 
 0.2 (2011-11-07)

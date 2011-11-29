@@ -33,12 +33,14 @@ class GeoObject(models.Model):
     A GeoObject 'as is' only contains basic information. In general, you will
     have to extend this information in a subclass.
 
-    Note that field 'ident' MUST be unique. This field will contain an ID for
-    the GeoObject in the terminology of the domain field. Client code can use
-    this field to query and/or filter.
+    Note that field 'ident' should be unique. This field will contain
+    an ID for the GeoObject in the terminology of the domain
+    field. Client code can use this field to query and/or filter. If
+    multiple items are returned, the user must contact the
+    administrator to remove one of the rows from the source data.
 
     """
-    ident = models.CharField(max_length=80, unique=True)
+    ident = models.CharField(max_length=80)
     geometry = models.GeometryField(srid=4326)
     geo_object_group = models.ForeignKey(GeoObjectGroup)
     objects = models.GeoManager()
